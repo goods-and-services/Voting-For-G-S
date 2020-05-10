@@ -80,7 +80,7 @@ For more information on how to vote, refer to the [Election Api](https://docs.ce
 Exmaple Command
 
 ```
-# Note that this command will wait for the next epoch transition, which may be up to 24 hours in the future.
+# Note that this command will wait for the next epoch transition, which may be up to 24 hours in the future. Consider running the command in a Screen session or Tmux window.
 celocli election:activate --from $CELO_VALIDATOR_VOTE_SIGNER_ADDRESS --wait
 ```
 
