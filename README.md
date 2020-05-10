@@ -4,7 +4,7 @@
 
 ## 1.) Setup a local accounts node
 
-As a prerequisite, You will need Docker installed .
+As a prerequisite, You will need Docker installed.
 
 ### 1a.) Environmental Variables
 
@@ -37,6 +37,14 @@ cd celo-accounts-node
 docker run --name celo-accounts -it --restart always -p 127.0.0.1:8545:8545 -v $PWD:/root/.celo $CELO_IMAGE --verbosity 3 --networkid $NETWORK_ID --syncmode full --rpc --rpcaddr 0.0.0.0 --rpcapi eth,net,web3,debug,admin,personal --bootnodes $BOOTNODE_ENODES
 ```
 
+If you don't use a ledger, you can create a new account 
+
+```
+docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE account new
+```
+
+or move your existing key to the `keystore` folder.
+
 For more information regarding starting your node, refer to the [docs](https://docs.celo.org/getting-started/rc1/running-a-validator-in-rc1#start-your-accounts-node).
 
 ## 2.) Download CLI
@@ -66,4 +74,16 @@ celocli election:vote --for 0xC05153EaAEAb67D5BAc1C25B1e5675Fb85B75a08 --from <Y
 ```
 
 For more information on how to vote, refer to the [Election Api](https://docs.celo.org/command-line-interface/election#vote).
+
+## 5.) Activate your Votes
+
+Exmaple Command
+
+```
+# Note that this command will wait for the next epoch transition, which may be up to 24 hours in the future.
+celocli election:activate --from $CELO_VALIDATOR_VOTE_SIGNER_ADDRESS --wait
+```
+
+For more information on how to activate, refer to the [Election Api](https://docs.celo.org/command-line-interface/election#activate).
+
 
