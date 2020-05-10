@@ -1,6 +1,4 @@
-# Address
-
-Validator Group Address
+## Validator Group Address
 
 > 0xC05153EaAEAb67D5BAc1C25B1e5675Fb85B75a08
 
