@@ -49,7 +49,7 @@ The CLI works best with Node 10:
 npm install -g @celo/celocli
 ```
 
-## 3.) Lock your cGLD from you address
+## 3.) Lock your cGLD
 
 Example Command:
 
@@ -59,7 +59,7 @@ celocli lockedgold:lock --from <YOUR-ADDRESS> --value <amount>
 For more information on how to lock, refer to the [LockedGold Api](https://docs.celo.org/command-line-interface/lockedgold#lock).
 
 
-## 4.) Vote for G & S
+## 4.) Vote for Goods & Services
 
 Example Command:
 
