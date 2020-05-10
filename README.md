@@ -77,7 +77,7 @@ For more information on how to vote, refer to the [Election Api](https://docs.ce
 
 ## 5.) Activate your Votes
 
-Exmaple Command
+Example Command
 
 ```
 # Note that this command will wait for the next epoch transition, which may be up to 24 hours in the future. Consider running the command in a Screen session or Tmux window.
