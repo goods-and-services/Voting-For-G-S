@@ -60,7 +60,7 @@ npm install -g @celo/celocli
 Example Command:
 
 ```
-celocli lockedgold:lock --from <YOUR-ADDRESS> --value <amount>
+celocli lockedgold:lock --from <YOUR-ADDRESS> --value <AMOUNT>
 ```
 For more information on how to lock, refer to the [LockedGold Api](https://docs.celo.org/command-line-interface/lockedgold#lock).
 
@@ -81,7 +81,7 @@ Exmaple Command
 
 ```
 # Note that this command will wait for the next epoch transition, which may be up to 24 hours in the future. Consider running the command in a Screen session or Tmux window.
-celocli election:activate --from $CELO_VALIDATOR_VOTE_SIGNER_ADDRESS --wait
+celocli election:activate --from <YOUR-ADDRESS> --wait
 ```
 
 For more information on how to activate, refer to the [Election Api](https://docs.celo.org/command-line-interface/election#activate).
