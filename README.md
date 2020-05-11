@@ -2,6 +2,8 @@
 
 > 0xC05153EaAEAb67D5BAc1C25B1e5675Fb85B75a08
 
+# Guide for voting for G&S
+
 ## Setup a local accounts node
 
 As a prerequisite, You will need Docker installed.
