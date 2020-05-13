@@ -59,20 +59,54 @@ npm install -g @celo/celocli
 
 ## Lock your cGLD
 
-Example Command:
+Example Address Command:
 
 ```
 celocli lockedgold:lock --from <YOUR-ADDRESS> --value <AMOUNT>
 ```
+
+Example ReleaseGold Command:
+
+```
+celocli releasegold:locked-gold --contract <YOUR-RG-ADDRESS> --action lock --value <AMOUNT>
+```
+
 For more information on how to lock, refer to the [LockedGold Api](https://docs.celo.org/command-line-interface/lockedgold#lock).
 
+
+## Create and Authorize a Vote Signer [Optional step for ReleaseGold contracts]
+
+Generate Your Vote Signer:
+
+```
+docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE account new
+```
+
+Generate Your Vote Signer Signature:
+
+```
+docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE --nousb account proof-of-possession <YOUR-VOTE-SIGNER-ADDRESS> <YOUR-RG-ADDRESS>
+
+```
+
+Authorize your new address as a Vote Signer
+
+
+Example Command:
+
+```
+celocli releasegold:authorize --contract <YOUR-RG-ADDRESS> --role vote --signature <VOTE-SIGNER-SIGNATURE> --signer <VOTE-SIGNER-SIGNATURE>
+
+```
+
+For more information on how to authoriz, refer to the [ReleaseGold Api](https://docs.celo.org/command-line-interface/releasegold#release-gold).
 
 ## Vote for Goods & Services
 
 Example Command:
 
 ```
-celocli election:vote --for 0xC05153EaAEAb67D5BAc1C25B1e5675Fb85B75a08 --from <YOUR-ADDRESS> --value <AMOUNT>
+celocli election:vote --for 0xC05153EaAEAb67D5BAc1C25B1e5675Fb85B75a08 --from <YOUR-ADDRESS-OR-RG-SIGNER> --value <AMOUNT>
 ```
 
 For more information on how to vote, refer to the [Election Api](https://docs.celo.org/command-line-interface/election#vote).
@@ -83,7 +117,7 @@ Example Command
 
 ```
 # Note that this command will wait for the next epoch transition, which may be up to 24 hours in the future. Consider running the command in a Screen session or Tmux window.
-celocli election:activate --from <YOUR-ADDRESS> --wait
+celocli election:activate --from <YOUR-ADDRESS-OR-RG-SIGNER> --wait
 ```
 
 For more information on how to activate, refer to the [Election Api](https://docs.celo.org/command-line-interface/election#activate).
