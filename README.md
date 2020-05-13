@@ -99,7 +99,7 @@ celocli releasegold:authorize --contract <YOUR-RG-ADDRESS> --role vote --signatu
 
 ```
 
-For more information on how to authoriz, refer to the [ReleaseGold Api](https://docs.celo.org/command-line-interface/releasegold#release-gold).
+For more information on how to authorize, refer to the [ReleaseGold Api](https://docs.celo.org/command-line-interface/releasegold#release-gold).
 
 ## Vote for Goods & Services
 
