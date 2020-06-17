@@ -57,7 +57,7 @@ The CLI works best with Node 10:
 npm install -g @celo/celocli
 ```
 
-## Lock your Celo Gold
+## Lock your CELO
 
 Example address command:
 
