@@ -26,6 +26,8 @@ docker pull $CELO_IMAGE
 Fetch the genesis block and a list of other nodes in the network to connect with:
 
 ```
+mkdir celo-accounts-node
+cd celo-accounts-node
 # On your local machine
 docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE init /celo/genesis.json
 export BOOTNODE_ENODES=`docker run --rm --entrypoint cat $CELO_IMAGE /celo/bootnodes`
@@ -34,8 +36,6 @@ export BOOTNODE_ENODES=`docker run --rm --entrypoint cat $CELO_IMAGE /celo/bootn
 Run the node:
 
 ```
-mkdir celo-accounts-node
-cd celo-accounts-node
 docker run --name celo-accounts -it --restart always -p 127.0.0.1:8545:8545 -v $PWD:/root/.celo $CELO_IMAGE --verbosity 3 --networkid $NETWORK_ID --syncmode full --rpc --rpcaddr 0.0.0.0 --rpcapi eth,net,web3,debug,admin,personal --bootnodes $BOOTNODE_ENODES
 ```
 
