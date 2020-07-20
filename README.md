@@ -1,6 +1,6 @@
 ## Validator Group Address
 
-> 0xC05153EaAEAb67D5BAc1C25B1e5675Fb85B75a08
+> 0x8580dB53C3ebC56230662B771ceF2707E92Ef83A
 
 # Guide to Voting for G&S
 
