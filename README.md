@@ -26,9 +26,10 @@ docker pull $CELO_IMAGE
 Fetch the genesis block and a list of other nodes in the network to connect with:
 
 ```
+# On your local machine
+
 mkdir celo-accounts-node
 cd celo-accounts-node
-# On your local machine
 docker run -v $PWD:/root/.celo --rm -it $CELO_IMAGE init /celo/genesis.json
 export BOOTNODE_ENODES=`docker run --rm --entrypoint cat $CELO_IMAGE /celo/bootnodes`
 ```
@@ -100,7 +101,7 @@ celocli releasegold:authorize --contract <YOUR-RG-ADDRESS> --role vote --signatu
 Example command:
 
 ```
-celocli election:vote --for 0xC05153EaAEAb67D5BAc1C25B1e5675Fb85B75a08 --from <YOUR-ADDRESS-OR-RG-SIGNER> --value <AMOUNT>
+celocli election:vote --for 0x8580dB53C3ebC56230662B771ceF2707E92Ef83A --from <YOUR-ADDRESS-OR-RG-SIGNER> --value <AMOUNT>
 ```
 
 *For more information on how to vote, refer to the [Election API](https://docs.celo.org/command-line-interface/election#vote).*
