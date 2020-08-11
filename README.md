@@ -11,7 +11,7 @@ As a prerequisite, you will need Docker installed.
 ### Environmental Variables
 
 ```
-export CELO_IMAGE=us.gcr.io/celo-testnet/celo-node:rc1
+export CELO_IMAGE=us.gcr.io/celo-org/celo-node:mainnet
 export NETWORK_ID=42220
 ```
 
